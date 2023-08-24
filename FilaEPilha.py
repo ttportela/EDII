@@ -7,7 +7,7 @@ class MaterialEscolar:
     
     def __str__(self):
         return self.descricao + ', ' + str(self.quantidade)
-    
+
 class Fila:
     def __init__(self):
         self.primeiro = None
@@ -40,7 +40,29 @@ class Fila:
             if self.primeiro == None:
                 self.ultimo = None
             return item
-    
+
+class Pilha:
+    def __init__(self):
+        self.primeiro = None
+        
+    def listar(self):
+        aux = self.primeiro
+        while aux != None:
+            print("-", aux)
+            aux = aux.proximo
+        
+    def adicionar(self, item):
+        item.proximo = self.primeiro
+        self.primeiro = item
+        
+    def remover(self):
+        if self.primeiro == None:
+            return None
+        
+        aux = self.primeiro
+        self.primeiro = self.primeiro.proximo
+        return aux
+
 def ler():
     x = MaterialEscolar('', '')
     x.descricao  = input("Informe a descrição: ")
@@ -50,7 +72,7 @@ def ler():
 ## https://codeshare.io/WdngP3
 print("-- Programa de Materiais --")
 
-ls = Fila()
+ls = Pilha()
 
 while True:
     print("\n---------------------------------")
