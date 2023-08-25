@@ -70,15 +70,14 @@ def ler():
     return x
 
 ## https://codeshare.io/WdngP3
-print("-- Programa de Materiais --")
-
 ls = Pilha()
-
 while True:
+    print("--    Programa de Materiais    --")
     print("\n---------------------------------")
     ls.listar()
+    print()
     
-    op = input("O que deseja? ([a]dicionar, [r]emover, [x]air)")
+    op = input("O que deseja? ([a]dicionar, [r]emover, [x]air) >> ")
     if op == 'a':
         aux = ler()
         ls.adicionar(aux)
